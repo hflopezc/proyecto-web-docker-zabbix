@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motos El Cóndor | Repuestos y Accesorios</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        /* BARRA SUPERIOR */
+        .barra {
+            height: 6px;
+            background: linear-gradient(
+                to right,
+                #f4d03f 0%,
+                #f4d03f 33%,
+                #2874a6 33%,
+                #2874a6 66%,
+                #c0392b 66%,
+                #c0392b 100%
+            );
+        }
+
+        /* ENCABEZADO */
+        header {
+            background: linear-gradient(135deg, #111, #2b2b2b);
+            color: white;
+            padding: 35px 20px;
+        }
+
+        .header-contenido {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .logo-icono {
+            font-size: 55px;
+        }
+
+        .logo h1 {
+            font-size: 38px;
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            color: #ddd;
+            font-size: 17px;
+        }
+
+        .boton {
+            background: #f4d03f;
+            color: #111;
+            padding: 14px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .boton:hover {
+            background: #ffd900;
+        }
+
+        /* HERO */
+        .hero {
+            background:
+                linear-gradient(rgba(0,0,0,0.70), rgba(0,0,0,0.70)),
+                linear-gradient(135deg, #17202a, #566573);
+
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 46px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        .hero .boton {
+            margin-top: 30px;
+        }
+
+        /* CONTENEDOR */
+        .contenedor {
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .titulo-seccion h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .titulo-seccion p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        /* TARJETAS */
+        .tarjetas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .tarjeta {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+            transition: transform 0.2s;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+        }
+
+        .icono {
+            font-size: 45px;
+            margin-bottom: 18px;
+        }
+
+        .tarjeta h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .tarjeta p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* CATEGORIAS */
+        .categorias {
+            background: #202020;
+            color: white;
+        }
+
+        .categorias .titulo-seccion p {
+            color: #ccc;
+        }
+
+        .lista-categorias {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .categoria {
+            background: #303030;
+            padding: 25px 15px;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid #444;
+        }
+
+        .categoria span {
+            display: block;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        /* CONTACTO */
+        .contacto {
+            text-align: center;
+            background: white;
+        }
+
+        .contacto h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .contacto p {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        .tecnologia {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+
+            .header-contenido {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .logo h1 {
+                font-size: 30px;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            .tarjetas {
+                grid-template-columns: 1fr;
+            }
+
+            .lista-categorias {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .lista-categorias {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 55px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="barra"></div>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="header-contenido">
+
+            <div class="logo">
+                <div class="logo-icono">🏍️</div>
+
+                <div>
+                    <h1>MOTOS EL CÓNDOR</h1>
+                    <p>Repuestos y accesorios para motocicletas</p>
+                </div>
+            </div>
+
+            <a href="#contacto" class="boton">
+                Contáctanos
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <h2>Tu moto, nuestra pasión</h2>
+
+        <p>
+            Encuentra repuestos, accesorios y soluciones para mantener
+            tu motocicleta siempre lista para la carretera.
+        </p>
+
+        <a href="#servicios" class="boton">
+            Conoce nuestros servicios
+        </a>
+
+    </section>
+
+
+    <!-- SERVICIOS -->
+    <section class="contenedor" id="servicios">
+
+        <div class="titulo-seccion">
+            <h2>Nuestros servicios</h2>
+
+            <p>
+                Todo lo que necesitas para cuidar y mejorar tu motocicleta.
+            </p>
+        </div>
+
+
+        <div class="tarjetas">
+
+            <div class="tarjeta">
+                <div class="icono">🔧</div>
+
+                <h3>Repuestos</h3>
+
+                <p>
+                    Repuestos para diferentes tipos y modelos
+                    de motocicletas.
+                </p>
+            </div>
+
+
+            <div class="tarjeta">
+                <div class="icono">🛠️</div>
+
+                <h3>Accesorios</h3>
+
+                <p>
+                    Accesorios para mejorar el rendimiento,
+                    seguridad y apariencia de tu moto.
+                </p>
+            </div>
+
+
+            <div class="tarjeta">
+                <div class="icono">🏍️</div>
+
+                <h3>Asesoría</h3>
+
+                <p>
+                    Orientación para encontrar el producto
+                    adecuado para tu motocicleta.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIAS -->
+    <section class="categorias">
+
+        <div class="contenedor">
+
+            <div class="titulo-seccion">
+                <h2>Categorías</h2>
+
+                <p>
+                    Algunas de las categorías disponibles.
+                </p>
+            </div>
+
+
+            <div class="lista-categorias">
+
+                <div class="categoria">
+                    <span>⚙️</span>
+                    <strong>Transmisión</strong>
+                </div>
+
+                <div class="categoria">
+                    <span>🛞</span>
+                    <strong>Llantas</strong>
+                </div>
+
+                <div class="categoria">
+                    <span>💡</span>
+                    <strong>Iluminación</strong>
+                </div>
+
+                <div class="categoria">
+                    <span>🪖</span>
+                    <strong>Seguridad</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+    <section class="contenedor contacto" id="contacto">
+
+        <h2>¿Necesitas un repuesto?</h2>
+
+        <p>
+            Estamos listos para ayudarte a encontrar lo que necesitas.
+        </p>
+
+        <a href="#" class="boton">
+            Solicitar información
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            <strong>MOTOS EL CÓNDOR</strong>
+        </p>
+
+        <p>
+            Repuestos y accesorios para motocicletas
+        </p>
+
+        <div class="tecnologia">
+            Proyecto Integrador · AWS EC2 · Docker · Nginx
+        </div>
+
+    </footer>
+
+</body>
+</html>
